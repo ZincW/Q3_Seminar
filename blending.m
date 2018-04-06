@@ -2,20 +2,20 @@
 % make a struct for all the source images
 file = struct;
 file.simg1 = im2double(imread('source.jpg'));
-% file.simg2 = im2double(imread('moon.jpg'));
 dimg = im2double(imread('target.jpg'));
 cell = struct2cell(file);
 % N is the number of input source images
 N= 1;
 hold on
-%% Loop for all the source images
+%Loop for all the source images
 for n =1:N
-%% crop the region of interest in source image
+%crop the region of interest in source image
 figure(1)
 % imread the nth source image
 simg = cell{n,1};
 imshow(simg,[]);
 source = imfreehand();
+
 % source = imrect();
 wait(source);
 % get the coordinates of the selected region
@@ -25,6 +25,7 @@ symin = scor(2);
 swidth = scor(3);
 sheight = scor(4);
 source = simg(symin:(symin+sheight), sxmin:(sxmin+swidth), :);
+
 
 %% crop the region of interest in destination image
 % show the destination image
