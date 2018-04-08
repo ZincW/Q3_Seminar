@@ -1,11 +1,10 @@
+function b_image = freehand_blend(sourcename,targetname)
 % use the algirthm shown in the link below to blend
 %http://cs.brown.edu/courses/cs129/results/proj2/taox/
 
-clear all;
-close all;
 % read the image in the format of double precision 
-source = im2double(imread('source.jpeg'));
-target = im2double(imread('target.jpg'));
+source = im2double(imread(sourcename));
+target = im2double(imread(targetname));
 
 %show the image 
 imshow(source, []);
