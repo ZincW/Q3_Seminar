@@ -1,8 +1,16 @@
+source1 = 'source1.jpg';
+source2 = 'source2.jpg';
+target = 'target1.jpg';
+N= 2;
+final_image = rectangle_blending(source1, source2,target,N);
+
+function final_image = rectangle_blending(source1, source2,target,N)
 CourseworkC = struct;
-CourseworkC.simg1 = im2double(imread('source1.jpg'));
-CourseworkC_image = im2double(imread('target1.jpg'));
+CourseworkC.simg1 = im2double(imread(source1));
+CourseworkC.simg2 = im2double(imread(source2));
+CourseworkC_image = im2double(imread(target));
 CourseworkC_cell = struct2cell(CourseworkC);
-N=1;hold on
+hold on
 % if we need more than one image, just change the N
 for n =1:N
 figure(1)
@@ -90,4 +98,6 @@ CourseworkC_image = reshape(U,Sr,Sc,3);
 print('finished!')
 end
 figure(4)
-imshow(uint8(CourseworkC_image*255));
+final_image = uint8(CourseworkC_image*255);
+imshow(final_image);
+end
