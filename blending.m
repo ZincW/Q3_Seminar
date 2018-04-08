@@ -14,9 +14,9 @@ figure(1)
 % imread the nth source image
 simg = cell{n,1};
 imshow(simg,[]);
-source = imfreehand();
+% source = imfreehand();
 
-% source = imrect();
+source = imrect();
 wait(source);
 % get the coordinates of the selected region
 scor = round(source.getPosition());
